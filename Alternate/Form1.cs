@@ -1,6 +1,7 @@
 using System.Windows.Forms;
 using System;
 using System.Security.Cryptography.X509Certificates;
+using Alternate.UI;
 
 namespace Alternate
 {
@@ -14,6 +15,16 @@ namespace Alternate
             {
                 dataGridView1.Rows.Add(i, "", "", "", "", "");
             }*/
+        }
+
+        private void New_Click(object sender, EventArgs e)
+        {
+            /*Form2 newMDIChild = new Form2();*/
+            UnitUI newMDIChild = new UnitUI();
+            // Set the Parent Form of the Child window.
+            newMDIChild.MdiParent = this;
+            // Display the new form.
+            newMDIChild.Show();
         }
 
         /* private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
