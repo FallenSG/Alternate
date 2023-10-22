@@ -361,5 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-
-E:\Microsoft Visual Studio\Project\Alternate\Alternate\Alternate.db
+/Alternate/Alternate.db
