@@ -1,6 +1,6 @@
-﻿namespace Alternate.UI
+﻿namespace Alternate.UI.Unit
 {
-    partial class UnitUI
+    partial class Add
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            unitBindingSource = new BindingSource(components);
             dataGridView1 = new DataGridView();
             unitIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             aliasDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             printNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)unitBindingSource).BeginInit();
+            unitBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)unitBindingSource).BeginInit();
             SuspendLayout();
-            // 
-            // unitBindingSource
-            // 
-            unitBindingSource.DataSource = typeof(Models.Unit);
             // 
             // dataGridView1
             // 
@@ -61,6 +57,7 @@
             unitIdDataGridViewTextBoxColumn.DataPropertyName = "UnitId";
             unitIdDataGridViewTextBoxColumn.HeaderText = "UnitId";
             unitIdDataGridViewTextBoxColumn.Name = "unitIdDataGridViewTextBoxColumn";
+            unitIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -80,28 +77,30 @@
             printNameDataGridViewTextBoxColumn.HeaderText = "PrintName";
             printNameDataGridViewTextBoxColumn.Name = "printNameDataGridViewTextBoxColumn";
             // 
-            // UnitUI
+            // unitBindingSource
+            // 
+            unitBindingSource.DataSource = typeof(Models.Unit);
+            // 
+            // Add
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(dataGridView1);
-            Enabled = false;
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "UnitUI";
-            ShowIcon = false;
-            Text = "Form1";
+            Name = "Add";
+            Text = "Add";
             WindowState = FormWindowState.Maximized;
-            TextChanged += Alternate_Load;
-            ((System.ComponentModel.ISupportInitialize)unitBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)unitBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private BindingSource unitBindingSource;
+
         private DataGridView dataGridView1;
+        private BindingSource unitBindingSource;
         private DataGridViewTextBoxColumn unitIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn aliasDataGridViewTextBoxColumn;

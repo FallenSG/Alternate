@@ -18,6 +18,7 @@ namespace Alternate.Models
 
         [Required]
         public Unit? Unit { get; set; }
+        public bool? IsVisible { get; set; }
         public int Tax { get; set; }
 
         public int SP { get; set; }

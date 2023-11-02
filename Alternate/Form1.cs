@@ -1,6 +1,7 @@
 using System.Windows.Forms;
 using System;
 using System.Security.Cryptography.X509Certificates;
+using Alternate.UI.Unit;
 using Alternate.UI;
 
 namespace Alternate
@@ -20,6 +21,15 @@ namespace Alternate
         private void New_Click(object sender, EventArgs e)
         {
             /*Form2 newMDIChild = new Form2();*/
+            Add newMDIChild = new Add();
+            // Set the Parent Form of the Child window.
+            newMDIChild.MdiParent = this;
+            // Display the new form.
+            newMDIChild.Show();
+        }
+
+        private void Unit_Click(object sender, EventArgs e)
+        {
             UnitUI newMDIChild = new UnitUI();
             // Set the Parent Form of the Child window.
             newMDIChild.MdiParent = this;

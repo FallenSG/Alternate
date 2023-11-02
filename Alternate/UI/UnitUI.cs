@@ -12,15 +12,15 @@ namespace Alternate.UI
             {
                 //dbContext.Database.Log = s => System.Diagnostics.Debug.WriteLine(s); // Optional for debugging
 
-                // Assuming you have a DbSet in YourDbContext named "Unit"
+                // Assuming you have a DbSet in YourDbContext named "Unit"dot
                 var names = dbContext.Units.Select(u => u.Name).ToList();
 
                 AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
                 autoCompleteCollection.AddRange(names.ToArray());
 
-                textBox1.AutoCompleteCustomSource = autoCompleteCollection;
+                /*textBox1.AutoCompleteCustomSource = autoCompleteCollection;
                 textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-                textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;*/
             }
         }
 

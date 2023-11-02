@@ -5,28 +5,24 @@ namespace Alternate.Data
     public class SeedData
     {
         public static void Initialize(Product_Context context) {
+            //context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-            if (context.Units.Any() && context.Unit_Conversions.Any() && context.Taxes.Any())
+            if (context.Units.Any() || context.Unit_Conversions.Any() || context.Taxes.Any())
             {
                 return;
             }
 
-            var Units = new Unit[]
-            {
-                new Unit { Name = "Kgs" },
-                new Unit { Name = "Gms"},
-                new Unit { Name = "Pcs" },
-                new Unit { Name = "Unit" },
-                new Unit { Name = "Bag" },
-                new Unit { Name = "Bundle" },
-                new Unit { Name = "Case" },
-                new Unit { Name = "Dozen" },
-                new Unit { Name = "Jar" },
-                new Unit { Name = "Ladi" },
-                new Unit { Name = "Patta" }
+            string[] Units_List = new string[] { 
+                "Kgs", "Gms", "Pcs", "Unit", "Bag", "Bundle", "Case", "Dozen", "Jar", "Ladi", "Patta"
             };
 
+            Unit[] Units = new Unit[Units_List.Length];
+
+            for (int i = 0; i < Units_List.Length; i++)
+            {
+                Units[i] = new Unit { Name = Units_List[i], Alias="", PrintName = Units_List[i] };
+            }
             context.Units.AddRange(Units);
             context.SaveChanges();
         }

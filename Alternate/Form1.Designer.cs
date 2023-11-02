@@ -31,6 +31,8 @@
             menuStrip1 = new MenuStrip();
             New = new ToolStripMenuItem();
             Window = new ToolStripMenuItem();
+            unitAddToolStripMenuItem = new ToolStripMenuItem();
+            unitToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,16 +48,30 @@
             // 
             // New
             // 
+            New.DropDownItems.AddRange(new ToolStripItem[] { unitAddToolStripMenuItem, unitToolStripMenuItem });
             New.Name = "New";
             New.Size = new Size(43, 20);
             New.Text = "New";
-            New.Click += New_Click;
             // 
             // Window
             // 
             Window.Name = "Window";
             Window.Size = new Size(63, 20);
             Window.Text = "Window";
+            // 
+            // unitAddToolStripMenuItem
+            // 
+            unitAddToolStripMenuItem.Name = "unitAddToolStripMenuItem";
+            unitAddToolStripMenuItem.Size = new Size(180, 22);
+            unitAddToolStripMenuItem.Text = "Unit Add";
+            unitAddToolStripMenuItem.Click += New_Click;
+            // 
+            // unitToolStripMenuItem
+            // 
+            unitToolStripMenuItem.Name = "unitToolStripMenuItem";
+            unitToolStripMenuItem.Size = new Size(180, 22);
+            unitToolStripMenuItem.Text = "Unit";
+            unitToolStripMenuItem.Click += Unit_Click;
             // 
             // Form1
             // 
@@ -80,5 +96,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem New;
         private ToolStripMenuItem Window;
+        private ToolStripMenuItem unitAddToolStripMenuItem;
+        private ToolStripMenuItem unitToolStripMenuItem;
     }
 }

@@ -8,6 +8,11 @@ namespace Alternate.Models
 
         [Required]
         [MaxLength(100)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
+
+        public string? Alias { get; set; }
+
+        public string? PrintName { get; set; }
+
     }
 }
